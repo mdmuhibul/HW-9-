@@ -173,9 +173,7 @@ sum( colSums(dat_train) == 0)
 
 #Check
 fmla_sobj <- reformulate( names(dat_for_analysis_sub[2:151]), response = "pub_work")
-
 sobj <- standardize(fmla_sobj, dat_train, family = binomial)
-
 s_dat_test <- predict(sobj, dat_test)
 
 #Final
@@ -231,8 +229,6 @@ summary(model_lpm_v1m)
 #In both of the regressions age was not significant, but getting education higher bachelor degree was
 #highly significant. The p value with female is much lower than male regression model.
 
-
-
 #Random Forest
 #install.packages('randomForest') # For generating random forest model
 #library(randomForest)
@@ -254,7 +250,6 @@ table(pred = pred_model1, true = dat_test$pub_work)
 #Predicted to be true and actually true was 395 or 10 percent
 
 
-
 #Support Vector Machine
 #install.packages('e1071') 
 #library(e1071)
@@ -271,5 +266,5 @@ table(pred = svm.pred, true = dat_test$pub_work)
 #Predicted to be false, but actually true was 939 or 0.24
 #Predicted to be true and actually true was 360 or 9 percent
 
-#Based on this, random forest model was better based in predicted the correct values. Random forest 
-#predicted more accurate value than latter model
+#Based on this, random forest model was better based in predicted the correct values.  
+#Random forest predicted more accurate value than latter model
